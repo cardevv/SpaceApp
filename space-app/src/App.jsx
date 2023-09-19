@@ -2,6 +2,7 @@ import { styled } from "styled-components"
 import EstilosGlobais from "./componentes/EstiloGlobais/EstilosGlobais"
 import Cabecalho from "./componentes/EstiloGlobais/Cabecalho"
 import CampoTexto from "./componentes/CampoTexto"
+import BarraLateral from "./componentes/BarraLateral"
 
 
 
@@ -27,6 +28,8 @@ function App() {
 <Cabecalho>
 
 </Cabecalho>
+<BarraLateral></BarraLateral>
+
 
     
     
