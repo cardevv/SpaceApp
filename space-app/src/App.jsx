@@ -1,8 +1,9 @@
 import { styled } from "styled-components"
-import EstilosGlobais from "./componentes/EstiloGlobais/EstilosGlobais"
-import Cabecalho from "./componentes/EstiloGlobais/Cabecalho"
-import CampoTexto from "./componentes/CampoTexto"
+import EstilosGlobais from "./componentes/EstilosGlobais"
+import Cabecalho from "./componentes/Cabecalho"
 import BarraLateral from "./componentes/BarraLateral"
+import Banner from "./componentes/Banner"
+import bannerBackground from './assets/banner.png'
 
 
 
@@ -29,6 +30,13 @@ function App() {
 
 </Cabecalho>
 <BarraLateral></BarraLateral>
+<Banner 
+
+backgroundImage={bannerBackground} 
+texto='A galeria mais  completa de fotos do espaço!'
+
+>
+</Banner>
 
 
     

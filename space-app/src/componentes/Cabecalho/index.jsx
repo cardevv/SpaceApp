@@ -1,5 +1,5 @@
 import {styled} from 'styled-components'
-import CampoTexto from '../../CampoTexto'
+import CampoTexto from '../CampoTexto'
 
 
 

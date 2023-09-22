@@ -11,8 +11,8 @@ display: inline-block;
 `
 
 const EstiloCampoTexto = styled.input`
-
-
+font-family: Arial, Helvetica, sans-serif;
+padding:  10px 16px;
 margin: 0px 20px;
 border-radius: 10px;
 border:  2px solid;
