@@ -5,7 +5,6 @@ import BarraLateral from "./componentes/BarraLateral"
 import Banner from "./componentes/Banner"
 import bannerBackground from './assets/banner.png'
 import Galeria from "./componentes/Galeria"
-
 import fotos from "./fotos.json"
 import { useState } from "react"
 
@@ -21,10 +20,12 @@ min-height: 100vh;
 `
 
  const Appcontainer = styled.div`
- width: 1440px;
+ width: 90%;
  margin: 0 auto;
- max-width: 100%;
  
+ 
+
+
  `
 
  const MainContainer = styled.main`

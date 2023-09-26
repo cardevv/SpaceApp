@@ -12,7 +12,7 @@ min-height: 320px;
 margin: 0;
 border-radius: 20px;
 
-max-width: 100%;
+width: 105%;
 background-size: cover;
 
  
