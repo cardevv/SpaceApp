@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const CardEstilo = styled.div`
 
-width: ${props => props.$expandida ? '90%' : '420px'} ;
+width: ${props => props.$expandida ? '90%' : '448px'} ;
 
 max-width: 100%;
 margin: 0;
@@ -10,10 +10,15 @@ display: flex;
 flex-direction: column;
 flex-grow: 1;
 
+
+>
 img {
 
     max-width: 100%;
     border-radius:  20px 20px 0 0;
+    height: 336px;
+    width: 538px;
+   
 
 
 }
@@ -29,6 +34,8 @@ border-radius: 0px 0px 20px 20px;
 color: white;
 box-sizing: border-box;
 padding: 12px;
+width: 538px;
+max-width: 100%;
 
 `
 
@@ -65,9 +72,17 @@ const CardBotao = styled.button `
     align-items: center;
     justify-content: center;
     background-color: transparent;
+    padding: 0;
+    
+  
+    
+
+   
     
     border: none;
     cursor: pointer;
+
+    
 
 
 `
@@ -76,7 +91,7 @@ const CardBotao = styled.button `
 
 
 
-const Card = ( {foto , expandida = false}) => {
+const Card = ( {foto , expandida = false , aoZoomSolicitado} ) => {
 
   return (<CardEstilo $expandida={expandida} id={`foto-${foto.id}`}>
          <img src={foto.path} alt={foto.alt}></img>
@@ -85,7 +100,7 @@ const Card = ( {foto , expandida = false}) => {
                 <Cardfooter>
                     <CardFonte>{foto.fonte}</CardFonte>
                     <CardBotao><img src="/icones/favorito.png" alt="icone favorito"></img></CardBotao>
-                    {!expandida && <CardBotao aria-hidden={expandida}>
+                    {!expandida && <CardBotao aria-hidden={expandida} onClick={() => aoZoomSolicitado(foto)}>
                         <img src="/icones/expandir.png" alt="icone expandir"></img></CardBotao>}
                 </Cardfooter>
             

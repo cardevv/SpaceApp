@@ -3,6 +3,7 @@ import Titulo from "../Titulo";
 import Tags from "./Tags";
 import Populares from "./Populares";
 import Card from "./Card";
+import CardPopular from "./CardPopular";
 
 
 
@@ -19,7 +20,7 @@ const FavoritoEstilo = styled.div`
 
 
 
-`
+` 
 
 const SecaoFluida = styled.section `
 
@@ -33,9 +34,10 @@ const CardContainer = styled.section `
  justify-content: space-between;
  flex-wrap: wrap;
  gap: 24px;
+margin-right: 120px;
 `
 
-const Galeria = ({fotos = []}) => {
+const Galeria = ({fotos = [], aoFotoSelecionada}) => {
 
     return (
         <>
@@ -48,6 +50,7 @@ const Galeria = ({fotos = []}) => {
                 <Titulo>Navegue pela galeria</Titulo>
                 <CardContainer>
                 {fotos.map(foto => <Card
+                aoZoomSolicitado={aoFotoSelecionada}
                 key={foto.id}
                 foto={foto} 
                 ></Card>)}
@@ -57,6 +60,7 @@ const Galeria = ({fotos = []}) => {
             </SecaoFluida>
             <FavoritoEstilo>
                 <Populares></Populares>
+                <CardPopular></CardPopular>
             </FavoritoEstilo>
             
 

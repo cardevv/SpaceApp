@@ -62,6 +62,7 @@ import { useState } from 'react'
         border-color:${props => props.$ativo ? '#C98CF1' : 'transparent'};
         gap: 10px;
         background-color: rgba(217,217,217,0.3);
+        cursor: pointer;
  `
  
  const Tags = ()=> {
