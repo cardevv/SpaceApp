@@ -37,11 +37,11 @@ const CardContainer = styled.section `
 margin-right: 120px;
 `
 
-const Galeria = ({fotos = [], aoFotoSelecionada}) => {
+const Galeria = ({fotos = [], aoFotoSelecionada , AoFavoritar , setTag}) => {
 
     return (
         <>
-        <Tags></Tags>
+        <Tags setTag={setTag}></Tags>
         
         <GaleriaContainer>
 
@@ -50,6 +50,8 @@ const Galeria = ({fotos = [], aoFotoSelecionada}) => {
                 <Titulo>Navegue pela galeria</Titulo>
                 <CardContainer>
                 {fotos.map(foto => <Card
+
+                AoFavoritar={AoFavoritar}
                 aoZoomSolicitado={aoFotoSelecionada}
                 key={foto.id}
                 foto={foto} 

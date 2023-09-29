@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import fotos from './fotos-populares.json'
+
 const PopularEstilo = styled.section`
 
 display: flex;
@@ -15,7 +17,7 @@ margin-left: -38px;
 
 img {
    
-    width: 212px;
+    max-width: 212px;
     height: 158px;
     border-radius: 20px;
 }
@@ -23,21 +25,27 @@ img {
 
 button {
 
-    width: 208px;
-    height: 56px;
-    border-radius: 10px;
-    background: transparent;
-
-    color: white;
+    background-color: transparent;
+    color: #fff;
     border: 2px solid;
-    border-color:#C98CF1 
+    border-color: #C98CF1;
+    padding: 12px 20px;
+    font-size: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 16px;
 
+
+
+
+ 
 }
 
 button:hover {
 
     border-color: white;
-    cursor: pointer;
+   
 }
 
 
@@ -51,11 +59,7 @@ const CardPopular = () => {
     return (
 <PopularEstilo>
 
-        <img src="./imagens/populares/foto-1.png"></img>
-        <img src="./imagens/populares/foto-2.png"></img>
-        <img src="./imagens/populares/foto-3.png"></img>
-        <img src="./imagens/populares/foto-4.png"></img>
-        <img src="./imagens/populares/foto-5.png"></img>
+        {fotos.map(foto => <img key={foto.id} src={foto.path} alt={foto.alt}></img>)}
         <button>Ver mais</button>
         
 

@@ -14,40 +14,40 @@ bottom: 0;
 `
 
 const ZoomEstilo = styled.dialog `
-    position: absolute;
+   display: flex;
+   justify-content: center;
+   background:transparent;
+   position: absolute;
+   padding: 0;
+   border: 0;
     top: 294px;
     width: 1156px;
     height: 740px;
+
+
+    
+
+
 
 
 
 `
 
 const EstiloBotao = styled.button `
-background: rgba(0, 0, 0, 0.7);
+background: transparent ;
     
     border: transparent;
-    position: absolute;
-    top: 0;
-    right: 0;
-    img {
-        width: 32px;
-        height: 32px;
-    }
+    position: relative;
+    top: 20px;
+    right: 60px;
+    
 
 
 `
 
-const ModalZoom = ({foto}) => {
+const ModalZoom = ({foto, aoFechar , AoFavoritar}) => {
 
 
-   // const [fotoModal,setFotoModal] = useState('')
-
-
-    function FechaModal () {
-
-        
-    }
 
 return (
     <>
@@ -55,11 +55,13 @@ return (
     {foto && <> 
   <Overlay></Overlay>
   
-    <ZoomEstilo open={!!foto}>
-        <Card foto={foto} expandida={true}></Card>
+    <ZoomEstilo open={!!foto} onClose={aoFechar}>
+        <Card foto={foto} expandida={true} AoFavoritar={AoFavoritar}></Card>
         
         <form method="dialog">
-            <EstiloBotao onClick={FechaModal}><img src="/icones/fechar.png"></img></EstiloBotao>
+            <EstiloBotao 
+            formMethod="dialog"
+            ><img src="/icones/fechar.png"></img></EstiloBotao>
         </form>
 
 

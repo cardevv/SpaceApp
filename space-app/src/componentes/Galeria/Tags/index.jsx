@@ -65,13 +65,16 @@ import { useState } from 'react'
         cursor: pointer;
  `
  
- const Tags = ()=> {
+ const Tags = ({setTag})=> {
 
 
     const[Botao, setBotao] = useState('')
 
-    const trocaCorBorda = (id) => {
+    const trocaCorBorda = (id , tag , setTag) => {
         setBotao(id)
+        setTag(tag.tag)
+
+
 
     }
 
@@ -79,7 +82,9 @@ return <>
 
 <EstiloTags>
     <p>Busque por tags:</p>
-{tags.map(tag => <EstiloBotao $ativo={tag.id === Botao} onClick={() => trocaCorBorda(tag.id)} key={tag.id}>{tag.titulo}</EstiloBotao>)}
+{tags.map(tag => <EstiloBotao $ativo={tag.id === Botao} 
+
+onClick={() => trocaCorBorda(tag.id , tag , setTag)} key={tag.id}>{tag.titulo}</EstiloBotao>)}
 </EstiloTags>
 
 

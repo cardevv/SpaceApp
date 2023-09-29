@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {styled} from 'styled-components'
 
 
@@ -40,13 +41,32 @@ const IconeLupa = styled.img`
 `;
 
 
-const CampoTexto = () => {
+const CampoTexto = ( {setFiltro}) => {
+
+
+
+   
+        const [valor, setValor] = useState('')
+
+
+
+        const handleChange = (event) => {
+           setValor(event.target.value);
+           setFiltro(valor)
+
+
+
+
+        };
+
+
+    
 
 
     return (
 
         <ContainerEstilo>
-            <EstiloCampoTexto placeholder='O que você procura?'></EstiloCampoTexto>
+            <EstiloCampoTexto value={valor}  onChange={handleChange} placeholder='O que você procura?'></EstiloCampoTexto>
             <IconeLupa  src='./icones/search.png'  ></IconeLupa>
 
         </ContainerEstilo>

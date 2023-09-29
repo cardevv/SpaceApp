@@ -24,14 +24,14 @@ img {
 
 
 
-const Cabecalho = () => {
+const Cabecalho = ( {setFiltro}) => {
 
 return(
 
     <HeaderEstilizado>
         <img   src='imagens/logo.png' alt=''></img>
 
-        <CampoTexto></CampoTexto>
+        <CampoTexto  setFiltro={setFiltro}></CampoTexto>
     </HeaderEstilizado>
 
     

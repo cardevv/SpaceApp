@@ -16,9 +16,7 @@ img {
 
     max-width: 100%;
     border-radius:  20px 20px 0 0;
-    height: 336px;
-    width: 538px;
-   
+    
 
 
 }
@@ -34,7 +32,7 @@ border-radius: 0px 0px 20px 20px;
 color: white;
 box-sizing: border-box;
 padding: 12px;
-width: 538px;
+
 max-width: 100%;
 
 `
@@ -91,7 +89,14 @@ const CardBotao = styled.button `
 
 
 
-const Card = ( {foto , expandida = false , aoZoomSolicitado} ) => {
+const Card = ( {foto , expandida = false , aoZoomSolicitado , AoFavoritar} ) => {
+
+
+    const IconeFavorito = foto.favorita ? '/icones/favorito-ativo.png' : '/icones/favorito.png' 
+
+
+
+
 
   return (<CardEstilo $expandida={expandida} id={`foto-${foto.id}`}>
          <img src={foto.path} alt={foto.alt}></img>
@@ -99,7 +104,7 @@ const Card = ( {foto , expandida = false , aoZoomSolicitado} ) => {
                 <CardTitulo>{foto.titulo}</CardTitulo>
                 <Cardfooter>
                     <CardFonte>{foto.fonte}</CardFonte>
-                    <CardBotao><img src="/icones/favorito.png" alt="icone favorito"></img></CardBotao>
+                    <CardBotao onClick={() => AoFavoritar(foto)}><img src={IconeFavorito} alt="icone favorito"></img></CardBotao>
                     {!expandida && <CardBotao aria-hidden={expandida} onClick={() => aoZoomSolicitado(foto)}>
                         <img src="/icones/expandir.png" alt="icone expandir"></img></CardBotao>}
                 </Cardfooter>
