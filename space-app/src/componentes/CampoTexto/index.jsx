@@ -52,7 +52,7 @@ const CampoTexto = ( {setFiltro}) => {
 
         const handleChange = (event) => {
            setValor(event.target.value);
-           setFiltro(valor)
+           setFiltro(valor);
 
 
 
